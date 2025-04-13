@@ -37,14 +37,13 @@ const Review = () => {
   }));
   
   const handleSubmit = () => {
-    if (!confirmUpload) return;
-    
+    // Removed validation check
     setIsSubmitting(true);
     
-    // Simulate submission process
+    // Simulate submission process with shorter delay
     setTimeout(() => {
       navigate("/processing");
-    }, 2000);
+    }, 500);
   };
   
   return (
@@ -160,7 +159,7 @@ const Review = () => {
           <Button 
             className="bg-studio-purple hover:bg-studio-purple/90 px-8 py-6 text-lg rounded-xl"
             onClick={handleSubmit}
-            disabled={isSubmitting || !confirmUpload}
+            // Removed disabled={isSubmitting || !confirmUpload} to allow clicking anytime
           >
             {isSubmitting ? (
               <>

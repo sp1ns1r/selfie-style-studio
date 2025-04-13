@@ -6,14 +6,12 @@ import { PhotoUploader } from "@/components/PhotoUploader";
 import { UserInfoForm } from "@/components/UserInfoForm";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 
 const Upload = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [userData, setUserData] = useState({ name: "", gender: "" });
-  const { toast } = useToast();
   const navigate = useNavigate();
   
   const steps: Step[] = [
@@ -31,32 +29,15 @@ const Upload = () => {
     setUserData(data);
   };
   
-  const handleSubmit = async () => {
-    if (files.length < 10) {
-      toast({
-        title: "Not enough photos",
-        description: "Please upload at least 10 photos for best results.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    if (!userData.name || !userData.gender) {
-      toast({
-        title: "Incomplete information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
+  const handleSubmit = () => {
+    // No validation checks - allow direct navigation
     setUploading(true);
     
-    // Simulate upload process
+    // Simulate upload process with short delay
     setTimeout(() => {
       setUploading(false);
       navigate("/styles");
-    }, 2000);
+    }, 500);
   };
   
   return (

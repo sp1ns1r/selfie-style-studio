@@ -18,7 +18,7 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-          Name <span className="text-red-500">*</span>
+          Name
         </label>
         <input
           type="text"
@@ -27,20 +27,18 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
           onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-studio-purple focus:border-transparent"
           placeholder="Your name"
-          required
         />
       </div>
       
       <div>
         <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-1">
-          Gender <span className="text-red-500">*</span>
+          Gender
         </label>
         <select
           id="gender"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
           className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-studio-purple focus:border-transparent"
-          required
         >
           <option value="">Select</option>
           <option value="male">Male</option>
