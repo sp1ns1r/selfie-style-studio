@@ -5,10 +5,10 @@ import { ProgressSteps, Step } from "@/components/ProgressSteps";
 import { StyleCard, Style } from "@/components/StyleCard";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Info } from "lucide-react";
+import { Info, ArrowRight, ArrowLeft } from "lucide-react";
 
 // Placeholder image URLs - in a real app, these would be proper style preview images
-const placeholderImage = "public/placeholder.svg";
+const placeholderImage = "/placeholder.svg";
 
 const styles: Style[] = [
   {
@@ -72,24 +72,28 @@ const StyleSelection = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
       <Header showBackButton email="spencerkier@gmail.com" />
       
       <div className="container max-w-5xl py-6">
         <ProgressSteps steps={steps} />
         
-        <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
-          <div className="p-6 border-b bg-gray-50">
+        <div className="bg-white rounded-2xl shadow-lg border-0 overflow-hidden">
+          <div className="p-6 border-b bg-gradient-to-r from-studio-purple/10 to-studio-blue/10">
             <h1 className="text-xl font-semibold">Select your styles</h1>
           </div>
           
           <div className="p-6">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3 mb-6">
-              <Info className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm text-gray-700">
-                  Select as many styles as you want. You'll get 4 photos total across your selections.
-                </p>
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 mb-8">
+              <div className="flex items-start gap-3">
+                <div className="p-1.5 rounded-full bg-blue-100 flex-shrink-0">
+                  <Info className="h-4 w-4 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-700">
+                    Select your preferred professional styles below. You'll get 4 photos total across all your selected styles.
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -105,19 +109,20 @@ const StyleSelection = () => {
             </div>
             
             {selectedStyles.length > 0 && (
-              <div className="mt-8 p-4 bg-gray-50 rounded-lg border">
-                <h3 className="font-medium mb-2">Your selections:</h3>
-                <ul className="space-y-2">
+              <div className="mt-8 p-5 rounded-xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-100">
+                <h3 className="font-medium mb-3 text-purple-800">Your selections</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                   {selectedStyles.map(styleId => {
                     const style = styles.find(s => s.id === styleId);
-                    return (
-                      <li key={styleId} className="flex items-center gap-2 text-sm">
-                        <span className="w-2 h-2 bg-studio-purple rounded-full"></span>
-                        {style?.name}: 2 photos
-                      </li>
+                    return style && (
+                      <div key={styleId} className="flex items-center gap-2 bg-white p-2 rounded-lg border border-purple-100 shadow-sm">
+                        <div className="h-4 w-4 rounded-full bg-gradient-to-r from-studio-purple to-studio-blue"></div>
+                        <span className="text-sm font-medium">{style.name}</span>
+                        <span className="text-xs bg-studio-purple/10 text-studio-purple px-2 py-0.5 rounded-full ml-auto">2 photos</span>
+                      </div>
                     );
                   })}
-                </ul>
+                </div>
               </div>
             )}
           </div>
@@ -127,16 +132,16 @@ const StyleSelection = () => {
           <Button 
             variant="outline"
             onClick={() => navigate("/upload")}
-            className="px-6 py-2"
+            className="px-6 py-2 border-gray-200 flex items-center gap-1"
           >
-            Back
+            <ArrowLeft className="h-4 w-4" /> Back
           </Button>
           <Button 
-            className="bg-studio-purple hover:bg-studio-purple/90 px-8 py-6 text-lg rounded-xl"
+            className="bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90 px-8 py-6 text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2"
             onClick={handleContinue}
             disabled={selectedStyles.length === 0}
           >
-            Continue to Review
+            Continue to Review <ArrowRight className="h-4 w-4 ml-1" />
           </Button>
         </div>
       </div>

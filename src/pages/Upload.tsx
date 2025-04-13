@@ -5,8 +5,9 @@ import { ProgressSteps, Step } from "@/components/ProgressSteps";
 import { PhotoUploader } from "@/components/PhotoUploader";
 import { UserInfoForm } from "@/components/UserInfoForm";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, ArrowRight, Camera, UserCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 const Upload = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -30,10 +31,7 @@ const Upload = () => {
   };
   
   const handleSubmit = () => {
-    // No validation checks - allow direct navigation
     setUploading(true);
-    
-    // Simulate upload process with short delay
     setTimeout(() => {
       setUploading(false);
       navigate("/styles");
@@ -41,49 +39,62 @@ const Upload = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
       <Header showBackButton email="spencerkier@gmail.com" />
       
       <div className="container max-w-5xl py-6">
         <ProgressSteps steps={steps} />
         
-        <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
-          <div className="p-6 border-b bg-gray-50">
-            <h1 className="text-xl font-semibold">Upload your photos</h1>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-studio-purple/10 to-studio-blue/10 border-b p-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-studio-purple/20 rounded-full">
+                  <Camera className="h-5 w-5 text-studio-purple" />
+                </div>
+                <h2 className="text-xl font-semibold">Upload your photos</h2>
+              </div>
+            </CardHeader>
+            
+            <CardContent className="p-6">
+              <PhotoUploader onPhotosSelected={handlePhotosSelected} />
+            </CardContent>
+          </Card>
           
-          <div className="p-6">
-            <PhotoUploader onPhotosSelected={handlePhotosSelected} />
-          </div>
-        </div>
-        
-        <div className="mt-6 bg-white rounded-xl shadow-sm border overflow-hidden">
-          <div className="p-6 border-b bg-gray-50">
-            <h1 className="text-xl font-semibold">Your Information</h1>
-          </div>
-          
-          <div className="p-6">
-            <UserInfoForm onSubmit={handleUserDataChange} />
-          </div>
-        </div>
-        
-        <div className="mt-8 flex justify-end">
-          <Button 
-            className="bg-studio-purple hover:bg-studio-purple/90 px-8 py-6 text-lg rounded-xl"
-            onClick={handleSubmit}
-            disabled={uploading}
-          >
-            {uploading ? (
-              <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Uploading...
-              </>
-            ) : (
-              <>
-                Continue to Styles
-              </>
-            )}
-          </Button>
+          <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-studio-purple/10 to-studio-blue/10 border-b p-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-studio-purple/20 rounded-full">
+                  <UserCircle className="h-5 w-5 text-studio-purple" />
+                </div>
+                <h2 className="text-xl font-semibold">Your Information</h2>
+              </div>
+            </CardHeader>
+            
+            <CardContent className="p-6">
+              <UserInfoForm onSubmit={handleUserDataChange} />
+              
+              <div className="mt-8">
+                <Button 
+                  className="w-full bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90 py-6 text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  onClick={handleSubmit}
+                  disabled={uploading}
+                >
+                  {uploading ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Uploading...
+                    </>
+                  ) : (
+                    <>
+                      Continue to Styles
+                      <ArrowRight className="h-5 w-5 ml-1" />
+                    </>
+                  )}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

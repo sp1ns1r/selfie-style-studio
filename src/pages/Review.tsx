@@ -4,8 +4,9 @@ import { Header } from "@/components/Header";
 import { ProgressSteps, Step } from "@/components/ProgressSteps";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Pencil, Info, Loader2 } from "lucide-react";
+import { Pencil, Info, Loader2, CheckCircle, User, Palette, Camera, ArrowRight, ArrowLeft } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 const Review = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,116 +33,127 @@ const Review = () => {
   
   const uploadedPhotos = Array(11).fill(null).map((_, i) => ({
     id: i,
-    src: "public/placeholder.svg",
+    src: "/placeholder.svg",
     name: `Photo ${i+1}`
   }));
   
   const handleSubmit = () => {
-    // Removed validation check
     setIsSubmitting(true);
     
-    // Simulate submission process with shorter delay
     setTimeout(() => {
       navigate("/processing");
     }, 500);
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
       <Header showBackButton email="spencerkier@gmail.com" />
       
       <div className="container max-w-5xl py-6">
         <ProgressSteps steps={steps} />
         
-        <div className="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
-          <div className="p-6 border-b bg-gray-50">
+        <Card className="border-0 shadow-lg rounded-2xl overflow-hidden mb-6">
+          <CardHeader className="bg-gradient-to-r from-studio-purple/10 to-studio-blue/10 border-b p-6">
             <h1 className="text-xl font-semibold">Review information</h1>
-          </div>
+          </CardHeader>
           
-          <div className="p-6">
-            <div className="flex items-center justify-between border-b pb-4">
-              <div className="flex items-center gap-4">
-                <div className="h-10 w-10 rounded-full bg-studio-purple/10 flex items-center justify-center">
-                  <span className="text-studio-purple">👤</span>
-                </div>
-                <div>
-                  <h3 className="font-medium">{userData.name}</h3>
-                  <p className="text-sm text-gray-600">{userData.gender}</p>
-                </div>
-              </div>
-              <Button variant="ghost" size="sm" className="flex items-center gap-1">
-                <Pencil className="h-4 w-4" />
-                Edit info
-              </Button>
-            </div>
-            
-            <div className="flex items-center justify-between border-b py-4">
-              <div className="flex items-center gap-4">
-                <div className="h-10 w-10 rounded-full bg-studio-purple/10 flex items-center justify-center">
-                  <span className="text-studio-purple">🎨</span>
-                </div>
-                <div>
-                  <h3 className="font-medium">{selectedStyles.length} styles selected</h3>
-                  <div className="text-sm text-gray-600">
-                    {selectedStyles.map(style => (
-                      <p key={style.name}>{style.name}: {style.count} photos</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <Button variant="ghost" size="sm" className="flex items-center gap-1">
-                <Pencil className="h-4 w-4" />
-                Edit styles
-              </Button>
-            </div>
-            
-            <div className="pt-4">
-              <div className="flex items-center justify-between mb-4">
+          <CardContent className="p-6">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center gap-4">
-                  <div className="h-10 w-10 rounded-full bg-studio-purple/10 flex items-center justify-center">
-                    <span className="text-studio-purple">📸</span>
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-studio-purple to-studio-blue/70 flex items-center justify-center text-white">
+                    <User className="h-6 w-6" />
                   </div>
-                  <h3 className="font-medium">{uploadedPhotos.length} photos uploaded</h3>
+                  <div>
+                    <h3 className="font-medium text-lg">{userData.name}</h3>
+                    <p className="text-sm text-gray-600">{userData.gender}</p>
+                  </div>
                 </div>
-                <Button variant="ghost" size="sm" className="flex items-center gap-1">
-                  <Pencil className="h-4 w-4" />
-                  Edit photos
+                <Button variant="outline" size="sm" className="flex items-center gap-1 text-studio-purple border-studio-purple/30 hover:bg-studio-purple/5">
+                  <Pencil className="h-3 w-3" />
+                  Edit info
                 </Button>
               </div>
               
-              <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 gap-3">
-                {uploadedPhotos.map(photo => (
-                  <div key={photo.id} className="aspect-square rounded-md overflow-hidden bg-gray-100">
-                    <img 
-                      src={photo.src} 
-                      alt={photo.name} 
-                      className="w-full h-full object-cover"
-                    />
+              <div className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-studio-purple to-studio-blue/70 flex items-center justify-center text-white">
+                    <Palette className="h-6 w-6" />
                   </div>
-                ))}
+                  <div>
+                    <h3 className="font-medium text-lg">{selectedStyles.length} styles selected</h3>
+                    <div className="text-sm text-gray-600">
+                      {selectedStyles.map(style => (
+                        <div key={style.name} className="flex items-center gap-1">
+                          <CheckCircle className="h-3 w-3 text-studio-purple" />
+                          <span>{style.name}: {style.count} photos</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <Button variant="outline" size="sm" className="flex items-center gap-1 text-studio-purple border-studio-purple/30 hover:bg-studio-purple/5">
+                  <Pencil className="h-3 w-3" />
+                  Edit styles
+                </Button>
+              </div>
+              
+              <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-studio-purple to-studio-blue/70 flex items-center justify-center text-white">
+                      <Camera className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-medium text-lg">{uploadedPhotos.length} photos uploaded</h3>
+                  </div>
+                  <Button variant="outline" size="sm" className="flex items-center gap-1 text-studio-purple border-studio-purple/30 hover:bg-studio-purple/5">
+                    <Pencil className="h-3 w-3" />
+                    Edit photos
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+                  {uploadedPhotos.slice(0, 6).map(photo => (
+                    <div key={photo.id} className="aspect-square rounded-lg overflow-hidden bg-gray-100 border border-gray-200 shadow-sm transition-transform hover:scale-105 duration-300">
+                      <img 
+                        src={photo.src} 
+                        alt={photo.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                  {uploadedPhotos.length > 6 && (
+                    <div className="aspect-square rounded-lg overflow-hidden bg-studio-purple/10 border border-studio-purple/20 flex items-center justify-center text-studio-purple font-medium shadow-sm">
+                      +{uploadedPhotos.length - 6} more
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
         
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-5 mb-6">
           <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
+            <div className="p-2 rounded-full bg-blue-100 flex-shrink-0">
+              <Info className="h-5 w-5 text-blue-600" />
+            </div>
             <div>
-              <h3 className="font-medium text-blue-800 mb-1">What's next?</h3>
+              <h3 className="font-medium text-blue-800 mb-1">What happens next?</h3>
               <p className="text-sm text-gray-700">
-                When you click "Submit", we'll hand the photos off to our "AI photographer", then send you an email when your photos are ready.
-                This usually takes &lt;1 hour.
+                When you click "Submit", we'll hand the photos off to our AI models and generate your professional portraits.
+                You'll receive an email when your photos are ready, typically in less than an hour.
               </p>
             </div>
           </div>
         </div>
         
-        <div className="flex items-start gap-2 mb-6">
+        <div className="flex items-start gap-3 mb-6 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
           <Checkbox 
             id="confirm" 
             checked={confirmUpload}
             onCheckedChange={(checked) => setConfirmUpload(checked as boolean)}
+            className="data-[state=checked]:bg-studio-purple data-[state=checked]:border-studio-purple"
           />
           <label htmlFor="confirm" className="text-sm text-gray-700 cursor-pointer">
             I have uploaded my best photos and understand these will influence the final result.
@@ -152,14 +164,13 @@ const Review = () => {
           <Button 
             variant="outline"
             onClick={() => navigate("/styles")}
-            className="px-6 py-2"
+            className="px-6 py-2 border-gray-200 flex items-center gap-1"
           >
-            Back
+            <ArrowLeft className="h-4 w-4" /> Back
           </Button>
           <Button 
-            className="bg-studio-purple hover:bg-studio-purple/90 px-8 py-6 text-lg rounded-xl"
+            className="bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90 px-8 py-6 text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2"
             onClick={handleSubmit}
-            // Removed disabled={isSubmitting || !confirmUpload} to allow clicking anytime
           >
             {isSubmitting ? (
               <>
@@ -167,7 +178,9 @@ const Review = () => {
                 Submitting...
               </>
             ) : (
-              "Submit & Pay"
+              <>
+                Submit & Pay <ArrowRight className="h-4 w-4 ml-1" />
+              </>
             )}
           </Button>
         </div>

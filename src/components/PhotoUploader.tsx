@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Upload, Info, X } from "lucide-react";
+import { Upload, Info, X, Image as ImageIcon } from "lucide-react";
 
 interface PhotoUploaderProps {
   onPhotosSelected: (files: File[]) => void;
@@ -54,31 +54,35 @@ export function PhotoUploader({ onPhotosSelected }: PhotoUploaderProps) {
   
   return (
     <div className="space-y-6">
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
-        <Info className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 flex items-start gap-3">
+        <div className="p-1.5 rounded-full bg-blue-100 flex-shrink-0">
+          <Info className="h-4 w-4 text-blue-600" />
+        </div>
         <div>
           <p className="text-sm text-gray-700">
-            <span className="font-semibold text-blue-700">For the best results, we strongly recommend </span>  
-            snapping 10-15 selfies in a single session, in good indoor-outdoor lighting, with the same facial expression you want in your generated photos.
-          </p>
-          <p className="text-sm text-gray-700 mt-1">
-            Avoid anything covering your face, like sunglasses, hats, or cropping.
+            <span className="font-semibold text-blue-700">For the best results:</span> Upload 
+            10-15 clear selfies with consistent lighting and neutral expressions. Focus on your face without cropping or obstructions.
           </p>
         </div>
       </div>
       
       <div 
-        className={`border-2 border-dashed rounded-lg ${dragActive ? 'border-studio-purple bg-studio-purple/5' : 'border-gray-300'} 
-          p-8 transition-all duration-200 flex flex-col items-center justify-center cursor-pointer`}
+        className={`border-2 border-dashed rounded-xl transition-all duration-300 flex flex-col items-center justify-center cursor-pointer
+          ${dragActive 
+            ? 'border-studio-purple bg-gradient-to-r from-studio-purple/5 to-studio-blue/5' 
+            : 'border-gray-200 hover:border-studio-purple/50 hover:bg-gray-50'
+          } p-8`}
         onDragEnter={handleDrag}
         onDragOver={handleDrag}
         onDragLeave={handleDrag}
         onDrop={handleDrop}
         onClick={() => document.getElementById('file-upload')?.click()}
       >
-        <Upload className={`h-12 w-12 ${dragActive ? 'text-studio-purple' : 'text-gray-400'} mb-4`} />
+        <div className={`p-4 rounded-full mb-4 ${dragActive ? 'bg-studio-purple/20' : 'bg-gray-100'}`}>
+          <Upload className={`h-8 w-8 ${dragActive ? 'text-studio-purple' : 'text-gray-400'}`} />
+        </div>
         <p className="text-lg font-medium mb-2">Drag photos here or click to upload</p>
-        <p className="text-sm text-gray-500 mb-4">PNG, JPG (MIN. 10, MAX. 20 images, 5MB max per image)</p>
+        <p className="text-sm text-gray-500 mb-4">PNG, JPG (10-20 photos recommended, 5MB max per image)</p>
         <input 
           id="file-upload"
           type="file"
@@ -92,13 +96,16 @@ export function PhotoUploader({ onPhotosSelected }: PhotoUploaderProps) {
       {selectedFiles.length > 0 && (
         <div className="mt-6">
           <div className="flex justify-between items-center mb-3">
-            <h3 className="font-medium">Selected Files ({selectedFiles.length}/20)</h3>
-            <p className="text-sm text-gray-500">Total size: {formattedSize}MB / 50MB</p>
+            <h3 className="font-medium flex items-center gap-2">
+              <ImageIcon className="h-4 w-4 text-studio-purple" />
+              Selected Photos <span className="bg-studio-purple/10 text-studio-purple text-xs px-2 py-0.5 rounded-full">{selectedFiles.length}/20</span>
+            </h3>
+            <p className="text-sm text-gray-500">Total size: {formattedSize}MB</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {selectedFiles.map((file, index) => (
               <div key={index} className="relative group">
-                <div className="h-24 w-full bg-gray-100 rounded-md relative overflow-hidden">
+                <div className="h-24 w-full bg-gray-50 rounded-lg relative overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
                   <img 
                     src={URL.createObjectURL(file)} 
                     alt={`Preview ${index}`}
@@ -109,7 +116,7 @@ export function PhotoUploader({ onPhotosSelected }: PhotoUploaderProps) {
                       e.stopPropagation();
                       removeFile(index);
                     }} 
-                    className="absolute top-1 right-1 bg-black/70 rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute top-1 right-1 bg-black/70 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all hover:bg-black"
                   >
                     <X className="h-3 w-3 text-white" />
                   </button>
