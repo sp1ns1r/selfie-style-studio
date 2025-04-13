@@ -5,7 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Check, Camera, Shield, Clock, Star, Users, FileCheck, Image } from "lucide-react";
+import { 
+  ArrowRight, 
+  Check, 
+  Camera, 
+  Shield, 
+  Clock, 
+  Star, 
+  Users, 
+  FileCheck, 
+  Image, 
+  DollarSign,
+  BadgeCheck 
+} from "lucide-react";
 
 export default function Landing() {
   const [email, setEmail] = useState("");
@@ -29,6 +41,7 @@ export default function Landing() {
             <div className="hidden md:flex items-center gap-6">
               <a href="#features" className="text-gray-600 hover:text-gray-900 font-medium">Features</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900 font-medium">Pricing</a>
+              <a href="#samples" className="text-gray-600 hover:text-gray-900 font-medium">Sample Photos</a>
               <a href="#testimonials" className="text-gray-600 hover:text-gray-900 font-medium">Testimonials</a>
               <a href="#faq" className="text-gray-600 hover:text-gray-900 font-medium">FAQ</a>
             </div>
@@ -48,11 +61,11 @@ export default function Landing() {
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl space-y-8">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Professional AI Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Minutes</span>, Not Days
+              Professional AI Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Hours</span>, Not Days
             </h1>
             
             <p className="text-xl text-gray-600">
-              Transform your selfies into stunning professional headshots using our AI. Perfect for LinkedIn, company websites, and professional profiles.
+              Transform your selfies into stunning professional headshots using our AI. Perfect for LinkedIn, company websites, and professional profiles - at a <span className="font-bold">fraction of the cost</span> of traditional photography.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -67,20 +80,20 @@ export default function Landing() {
               </div>
               <Button size="lg" className="bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90 h-12 whitespace-nowrap" asChild>
                 <Link to="/upload">
-                  Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
             
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <Check className="h-4 w-4 text-green-500" />
-              <span>No credit card required</span>
+              <span>40 professional headshots</span>
               <span className="mx-2">•</span>
               <Check className="h-4 w-4 text-green-500" />
-              <span>3 free headshots</span>
+              <span>Up to 5 styles</span>
               <span className="mx-2">•</span>
-              <Check className="h-4 w-4 text-green-500" />
-              <span>Cancel anytime</span>
+              <BadgeCheck className="h-4 w-4 text-green-500" />
+              <span>100% Money-back guarantee</span>
             </div>
           </div>
           
@@ -94,7 +107,7 @@ export default function Landing() {
                 <img src="/placeholder.svg" alt="Professional headshot" className="w-full aspect-square object-cover rounded-lg shadow-lg" />
               </div>
               
-              {/* Floating card */}
+              {/* Floating cards */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 border w-64">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
@@ -102,7 +115,19 @@ export default function Landing() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Quick Turnaround</h4>
-                    <p className="text-sm text-gray-500">Results in minutes</p>
+                    <p className="text-sm text-gray-500">Results in hours</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute -top-6 -left-6 bg-white rounded-lg shadow-xl p-4 border w-64">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                    <DollarSign className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">Cost Effective</h4>
+                    <p className="text-sm text-gray-500">Save up to 90% vs pros</p>
                   </div>
                 </div>
               </div>
@@ -122,7 +147,7 @@ export default function Landing() {
               <p className="text-gray-500">Average customer rating</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gray-900">15+</p>
+              <p className="text-3xl font-bold text-gray-900">5+</p>
               <p className="text-gray-500">Professional styles</p>
             </div>
             <div>
@@ -133,8 +158,115 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* Sample Photos Section */}
+      <section id="samples" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Professional Styles</h2>
+            <p className="text-xl text-gray-600">
+              See the high-quality results you'll get with our AI headshot technology
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {/* Style 1 */}
+            <div className="space-y-4">
+              <div className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Corporate style" 
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <h4 className="text-white font-medium">Corporate</h4>
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-semibold text-center">Corporate</h3>
+            </div>
+            
+            {/* Style 2 */}
+            <div className="space-y-4">
+              <div className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Studio style" 
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <h4 className="text-white font-medium">Studio</h4>
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-semibold text-center">Studio</h3>
+            </div>
+            
+            {/* Style 3 */}
+            <div className="space-y-4">
+              <div className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Outdoor style" 
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <h4 className="text-white font-medium">Outdoor</h4>
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-semibold text-center">Outdoor</h3>
+            </div>
+            
+            {/* Style 4 */}
+            <div className="space-y-4">
+              <div className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Casual style" 
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <h4 className="text-white font-medium">Casual</h4>
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-semibold text-center">Casual</h3>
+            </div>
+            
+            {/* Style 5 */}
+            <div className="space-y-4">
+              <div className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Creative style" 
+                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <h4 className="text-white font-medium">Creative</h4>
+                  </div>
+                </div>
+              </div>
+              <h3 className="font-semibold text-center">Creative</h3>
+            </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <Button size="lg" className="bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90" asChild>
+              <Link to="/upload">
+                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      <section id="features" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Transform Your Professional Image</h2>
@@ -163,7 +295,7 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Fast Results</h3>
                 <p className="text-gray-600">
-                  Get your professional headshots within minutes, not days. Perfect for urgent professional needs.
+                  Get your professional headshots within hours, not days. Perfect for urgent professional needs.
                 </p>
               </CardContent>
             </Card>
@@ -220,7 +352,7 @@ export default function Landing() {
       </section>
       
       {/* How It Works Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">How It Works</h2>
@@ -256,7 +388,7 @@ export default function Landing() {
               </div>
               <h3 className="text-xl font-bold mb-4">Get Your Headshots</h3>
               <p className="text-gray-600">
-                Receive high-quality, professional headshots in minutes.
+                Receive high-quality, professional headshots in hours.
               </p>
             </div>
           </div>
@@ -264,15 +396,19 @@ export default function Landing() {
           <div className="mt-16 text-center">
             <Button size="lg" className="bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90" asChild>
               <Link to="/upload">
-                Try It Free <ArrowRight className="ml-2 h-5 w-5" />
+                Get Started <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+            <p className="mt-4 text-gray-500">
+              <BadgeCheck className="inline h-5 w-5 text-green-500 align-text-bottom mr-1" /> 
+              100% Money-back guarantee if you're not completely satisfied
+            </p>
           </div>
         </div>
       </section>
       
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">What Our Customers Say</h2>
@@ -346,146 +482,66 @@ export default function Landing() {
       </section>
       
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="pricing" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple, Transparent Pricing</h2>
             <p className="text-xl text-gray-600">
-              Choose the plan that works best for you
+              One affordable option for professional headshots
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold mb-2">Basic</h3>
-                  <div className="flex items-center justify-center">
-                    <span className="text-4xl font-bold">$29</span>
-                    <span className="text-gray-500 ml-2">/ one-time</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>10 professional headshots</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>5 different styles</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>High-resolution downloads</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>7-day support</span>
-                  </li>
-                </ul>
-                
-                <Button className="w-full bg-gray-800 hover:bg-gray-700" asChild>
-                  <Link to="/upload">
-                    Choose Basic
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-            
+          <div className="max-w-lg mx-auto">
             <Card className="border-0 shadow-xl relative bg-gradient-to-b from-studio-purple/5 to-studio-blue/5">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-studio-purple to-studio-blue text-white px-4 py-1 rounded-full text-sm font-medium">
-                Most Popular
-              </div>
-              <CardContent className="pt-6">
+              <CardContent className="pt-8 px-8 pb-8">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold mb-2">Professional</h3>
+                  <h3 className="text-2xl font-bold mb-2">Professional Package</h3>
                   <div className="flex items-center justify-center">
-                    <span className="text-4xl font-bold">$49</span>
+                    <span className="text-5xl font-bold">$29</span>
                     <span className="text-gray-500 ml-2">/ one-time</span>
                   </div>
+                  <p className="text-gray-500 mt-2">No subscription, no hidden fees</p>
                 </div>
                 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-4 mb-8">
                   <li className="flex items-center">
                     <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>25 professional headshots</span>
+                    <span className="font-medium">40 professional headshots</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>10 different styles</span>
+                    <span>Up to 5 different styles</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
                     <span>High-resolution downloads</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span>Premium background options</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
                     <span>30-day support</span>
                   </li>
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>Background removal tool</span>
+                    <BadgeCheck className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="font-medium">100% Money-back guarantee</span>
                   </li>
                 </ul>
                 
-                <Button className="w-full bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90" asChild>
+                <Button size="lg" className="w-full bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90" asChild>
                   <Link to="/upload">
-                    Choose Professional
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold mb-2">Business</h3>
-                  <div className="flex items-center justify-center">
-                    <span className="text-4xl font-bold">$99</span>
-                    <span className="text-gray-500 ml-2">/ one-time</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>50 professional headshots</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>All available styles</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>High-resolution downloads</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>Priority support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>Advanced editing tools</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>Team collaboration features</span>
-                  </li>
-                </ul>
-                
-                <Button className="w-full bg-gray-800 hover:bg-gray-700" asChild>
-                  <Link to="/upload">
-                    Choose Business
+                    Get Started
                   </Link>
                 </Button>
               </CardContent>
             </Card>
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <p className="text-gray-500 max-w-2xl mx-auto">
-              All plans include a 100% satisfaction guarantee. If you're not happy with your headshots, we'll refund your purchase.
+              Not satisfied with your headshots? We offer a no-questions-asked, 100% money-back guarantee. Your satisfaction is our priority.
             </p>
           </div>
         </div>
@@ -527,7 +583,7 @@ export default function Landing() {
                 <div>
                   <h4 className="text-lg font-semibold mb-2">How long does it take to get my headshots?</h4>
                   <p className="text-gray-600">
-                    Most headshots are generated within 15-30 minutes. During peak times, it may take up to an hour.
+                    Most headshots are generated within a few hours. During peak times, it may take up to 24 hours.
                   </p>
                 </div>
               </TabsContent>
@@ -566,14 +622,14 @@ export default function Landing() {
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Is there a refund policy?</h4>
                   <p className="text-gray-600">
-                    Yes, we offer a 100% satisfaction guarantee. If you're not happy with your headshots, contact us within 14 days of purchase for a full refund.
+                    Yes, we offer a 100% satisfaction guarantee. If you're not happy with your headshots, contact us for a full refund with no questions asked.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Are there any hidden fees?</h4>
                   <p className="text-gray-600">
-                    No, the price you see is the price you pay. There are no hidden fees or subscription charges unless you specifically select a subscription plan.
+                    No, the price you see is the price you pay. There are no hidden fees or subscription charges.
                   </p>
                 </div>
               </TabsContent>
@@ -587,17 +643,18 @@ export default function Landing() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Transform Your Professional Image?</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
-            Get started with Selfie Style Studio today and receive professional headshots in minutes.
+            Get started with Selfie Style Studio today and receive professional headshots in hours.
           </p>
           
           <Button size="lg" className="bg-white text-studio-purple hover:bg-gray-100" asChild>
             <Link to="/upload">
-              Start Your Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+              Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
           
-          <p className="text-white/80 mt-6">
-            No credit card required • 3 free headshots • Cancel anytime
+          <p className="text-white/80 mt-6 flex items-center justify-center">
+            <BadgeCheck className="h-5 w-5 text-white mr-2" />
+            100% Money-back guarantee if you're not satisfied
           </p>
         </div>
       </section>
@@ -626,6 +683,7 @@ export default function Landing() {
               <ul className="space-y-3">
                 <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
                 <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#samples" className="text-gray-400 hover:text-white transition-colors">Sample Photos</a></li>
                 <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
                 <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
               </ul>
