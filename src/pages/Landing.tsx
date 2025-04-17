@@ -14,7 +14,6 @@ import {
   FileCheck,
   ImageIcon,
   Shield,
-  Users,
   Star
 } from "lucide-react";
 
@@ -241,7 +240,7 @@ export default function Landing() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch justify-center">
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
@@ -278,7 +277,7 @@ export default function Landing() {
               </CardContent>
             </Card>
             
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg md:col-start-2">
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
                   <ImageIcon className="h-6 w-6 text-yellow-600" />
@@ -290,7 +289,7 @@ export default function Landing() {
               </CardContent>
             </Card>
             
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg md:col-start-2">
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-red-600" />
