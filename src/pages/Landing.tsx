@@ -14,7 +14,9 @@ import {
   FileCheck,
   ImageIcon,
   Shield,
-  Star
+  Star,
+  Receipt,
+  Clock3
 } from "lucide-react";
 
 export default function Landing() {
@@ -124,6 +126,111 @@ export default function Landing() {
                     <p className="text-sm text-gray-500">Save up to 90% vs pros</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cost, Benefit & Process Summary Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                Professional Quality at <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Fraction of the Cost</span>
+              </h2>
+              
+              <div className="grid gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                    <DollarSign className="h-5 w-5 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">Only $29</h3>
+                    <p className="text-gray-600">90% cheaper than a professional photoshoot that costs $200-300+</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">Ready in Less Than 2 Hours</h3>
+                    <p className="text-gray-600">Just minutes to upload your selfies, with final photos delivered in under 2 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                    <ImageIcon className="h-5 w-5 text-studio-purple" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">40 Professional Photos</h3>
+                    <p className="text-gray-600">Choose from up to 5 different professional styles for your headshots</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                    <Receipt className="h-5 w-5 text-yellow-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">Business Expense Ready</h3>
+                    <p className="text-gray-600">Professional invoice provided that you can submit as a business expense</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 border">
+              <div className="text-center mb-8">
+                <h2 className="text-5xl font-bold text-gray-900">$29</h2>
+                <p className="text-xl text-gray-500 mt-1">One-time payment</p>
+              </div>
+              
+              <div className="space-y-6 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Upload your selfies</h3>
+                    <p className="text-sm text-gray-500">Takes just 3-5 minutes</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Our AI processes your photos</h3>
+                    <p className="text-sm text-gray-500">In less than 2 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Download your professional headshots</h3>
+                    <p className="text-sm text-gray-500">40 high-resolution images</p>
+                  </div>
+                </div>
+              </div>
+              
+              <Button size="lg" className="w-full bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90" asChild>
+                <Link to="/upload">
+                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              
+              <div className="mt-4 flex items-center justify-center text-sm text-gray-500">
+                <BadgeCheck className="h-5 w-5 text-green-500 mr-2" />
+                <span>100% Money-back guarantee</span>
               </div>
             </div>
           </div>
