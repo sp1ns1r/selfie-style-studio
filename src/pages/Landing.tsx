@@ -58,7 +58,7 @@ export default function Landing() {
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl space-y-8">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Professional Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Minutes, Not Days</span>
+              Professional Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Hours, Not Days</span>
             </h1>
             
             <p className="text-xl text-gray-600">
@@ -637,4 +637,14 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center md:text-left
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center md:text-left md:flex md:items-center md:justify-between">
+            <p className="text-gray-400">© 2025 Selfie Style Studio. All rights reserved.</p>
+            <div className="mt-4 md:mt-0">
+              <p className="text-gray-400">Made with ♥ for professionals worldwide</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
