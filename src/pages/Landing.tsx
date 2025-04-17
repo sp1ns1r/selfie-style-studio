@@ -18,6 +18,7 @@ import {
   Receipt,
   Clock3
 } from "lucide-react";
+import ComparisonTable from "@/components/landing/ComparisonTable";
 
 export default function Landing() {
   const [email, setEmail] = useState("");
@@ -337,6 +338,8 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      <ComparisonTable />
 
       <section id="features" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
