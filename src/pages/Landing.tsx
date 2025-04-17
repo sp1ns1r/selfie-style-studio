@@ -7,7 +7,15 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { 
   ArrowRight, 
   Check, 
-  BadgeCheck 
+  BadgeCheck,
+  Clock,
+  DollarSign,
+  Camera,
+  FileCheck,
+  ImageIcon,
+  Shield,
+  Users,
+  Star
 } from "lucide-react";
 
 export default function Landing() {
@@ -294,7 +302,7 @@ export default function Landing() {
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                  <Image className="h-6 w-6 text-yellow-600" />
+                  <ImageIcon className="h-6 w-6 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">High Quality Results</h3>
                 <p className="text-gray-600">
@@ -629,14 +637,4 @@ export default function Landing() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center md:text-left md:flex md:items-center md:justify-between">
-            <p className="text-gray-400">© 2025 Selfie Style Studio. All rights reserved.</p>
-            <div className="mt-4 md:mt-0">
-              <p className="text-gray-400">Made with ♥ for professionals worldwide</p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center md:text-left
