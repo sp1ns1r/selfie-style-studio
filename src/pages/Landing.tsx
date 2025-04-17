@@ -129,27 +129,6 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        
-        <div className="bg-white/70 backdrop-blur-sm border-t border-b py-6">
-          <div className="container mx-auto px-4 flex flex-wrap justify-center md:justify-between gap-8 text-center md:text-left">
-            <div>
-              <p className="text-3xl font-bold text-gray-900">500,000+</p>
-              <p className="text-gray-500">Professional headshots generated</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">4.9/5</p>
-              <p className="text-gray-500">Average customer rating</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">5+</p>
-              <p className="text-gray-500">Professional styles</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">100%</p>
-              <p className="text-gray-500">Satisfaction guarantee</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section id="samples" className="py-20 bg-white">
@@ -319,18 +298,6 @@ export default function Landing() {
                 <h3 className="text-xl font-bold mb-3">Privacy Protected</h3>
                 <p className="text-gray-600">
                   Your photos are processed securely and never shared with third parties. Your privacy is our priority.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-indigo-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">Team Solutions</h3>
-                <p className="text-gray-600">
-                  Perfect for companies looking to create consistent, professional headshots for their entire team.
                 </p>
               </CardContent>
             </Card>
