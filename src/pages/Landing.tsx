@@ -1,21 +1,12 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
   ArrowRight, 
   Check, 
-  Camera, 
-  Shield, 
-  Clock, 
-  Star, 
-  Users, 
-  FileCheck, 
-  Image, 
-  DollarSign,
   BadgeCheck 
 } from "lucide-react";
 
@@ -27,7 +18,6 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-studio-purple/5 to-studio-blue/5 border-b">
         <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Logo and navigation */}
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center">
               <div className="h-10 w-10 rounded-md bg-gradient-to-br from-studio-purple to-studio-blue flex items-center justify-center text-white mr-2">
@@ -57,15 +47,14 @@ export default function Landing() {
           </div>
         </div>
         
-        {/* Hero Content */}
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl space-y-8">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Professional AI Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Hours</span>, Not Days
+              Professional Headshots in <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">Minutes, Not Days</span>
             </h1>
             
             <p className="text-xl text-gray-600">
-              Transform your selfies into stunning professional headshots using our AI. Perfect for LinkedIn, company websites, and professional profiles - at a <span className="font-bold">fraction of the cost</span> of traditional photography.
+              Turn your selfies into professional headshots. Save hours and hundreds of dollars.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -99,7 +88,6 @@ export default function Landing() {
           
           <div className="w-full max-w-lg">
             <div className="relative">
-              {/* Example headshots grid */}
               <div className="grid grid-cols-2 gap-3">
                 <img src="/placeholder.svg" alt="Professional headshot" className="w-full aspect-square object-cover rounded-lg shadow-lg" />
                 <img src="/placeholder.svg" alt="Professional headshot" className="w-full aspect-square object-cover rounded-lg shadow-lg" />
@@ -107,7 +95,6 @@ export default function Landing() {
                 <img src="/placeholder.svg" alt="Professional headshot" className="w-full aspect-square object-cover rounded-lg shadow-lg" />
               </div>
               
-              {/* Floating cards */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 border w-64">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
@@ -135,7 +122,6 @@ export default function Landing() {
           </div>
         </div>
         
-        {/* Stats bar */}
         <div className="bg-white/70 backdrop-blur-sm border-t border-b py-6">
           <div className="container mx-auto px-4 flex flex-wrap justify-center md:justify-between gap-8 text-center md:text-left">
             <div>
@@ -158,7 +144,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Sample Photos Section */}
       <section id="samples" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -169,7 +154,6 @@ export default function Landing() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {/* Style 1 */}
             <div className="space-y-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
@@ -186,7 +170,6 @@ export default function Landing() {
               <h3 className="font-semibold text-center">Corporate</h3>
             </div>
             
-            {/* Style 2 */}
             <div className="space-y-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
@@ -203,7 +186,6 @@ export default function Landing() {
               <h3 className="font-semibold text-center">Studio</h3>
             </div>
             
-            {/* Style 3 */}
             <div className="space-y-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
@@ -220,7 +202,6 @@ export default function Landing() {
               <h3 className="font-semibold text-center">Outdoor</h3>
             </div>
             
-            {/* Style 4 */}
             <div className="space-y-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
@@ -237,7 +218,6 @@ export default function Landing() {
               <h3 className="font-semibold text-center">Casual</h3>
             </div>
             
-            {/* Style 5 */}
             <div className="space-y-4">
               <div className="relative group overflow-hidden rounded-lg">
                 <img 
@@ -265,7 +245,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -351,7 +330,6 @@ export default function Landing() {
         </div>
       </section>
       
-      {/* How It Works Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -407,7 +385,6 @@ export default function Landing() {
         </div>
       </section>
       
-      {/* Testimonials Section */}
       <section id="testimonials" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -481,7 +458,6 @@ export default function Landing() {
         </div>
       </section>
       
-      {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -517,16 +493,8 @@ export default function Landing() {
                     <span>High-resolution downloads</span>
                   </li>
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>Premium background options</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span>30-day support</span>
-                  </li>
-                  <li className="flex items-center">
                     <BadgeCheck className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="font-medium">100% Money-back guarantee</span>
+                    <span className="font-bold">100% Money-back guarantee</span>
                   </li>
                 </ul>
                 
@@ -538,16 +506,9 @@ export default function Landing() {
               </CardContent>
             </Card>
           </div>
-          
-          <div className="mt-8 text-center">
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Not satisfied with your headshots? We offer a no-questions-asked, 100% money-back guarantee. Your satisfaction is our priority.
-            </p>
-          </div>
         </div>
       </section>
       
-      {/* FAQ Section */}
       <section id="faq" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -558,87 +519,46 @@ export default function Landing() {
           </div>
           
           <div className="max-w-3xl mx-auto">
-            <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8">
-                <TabsTrigger value="general">General</TabsTrigger>
-                <TabsTrigger value="technical">Technical</TabsTrigger>
-                <TabsTrigger value="billing">Billing</TabsTrigger>
-              </TabsList>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What makes our AI headshots unique?</AccordionTrigger>
+                <AccordionContent>
+                  Our AI technology analyzes your selfies to generate professional headshots that look like they were taken by a professional photographer.
+                </AccordionContent>
+              </AccordionItem>
               
-              <TabsContent value="general" className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">How does Selfie Style Studio work?</h4>
-                  <p className="text-gray-600">
-                    Our AI technology analyzes your selfies to understand your facial features, expressions, and unique characteristics. Then it generates professional headshots that look like they were taken by a professional photographer.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">How many photos do I need to upload?</h4>
-                  <p className="text-gray-600">
-                    We recommend uploading 6-8 selfies with different angles and expressions for best results. This helps our AI understand your features better.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">How long does it take to get my headshots?</h4>
-                  <p className="text-gray-600">
-                    Most headshots are generated within a few hours. During peak times, it may take up to 24 hours.
-                  </p>
-                </div>
-              </TabsContent>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How many photos do I need to upload?</AccordionTrigger>
+                <AccordionContent>
+                  We recommend uploading 6-8 selfies with different angles and expressions for the best results.
+                </AccordionContent>
+              </AccordionItem>
               
-              <TabsContent value="technical" className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">What type of photos should I upload?</h4>
-                  <p className="text-gray-600">
-                    Upload clear selfies with good lighting where your face is clearly visible. Avoid heavy filters, sunglasses, or photos where your face is partially obscured.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">What is the resolution of the final headshots?</h4>
-                  <p className="text-gray-600">
-                    Our AI generates high-resolution headshots suitable for professional use, typically 1024x1024 pixels or higher.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Can I request specific backgrounds or attire?</h4>
-                  <p className="text-gray-600">
-                    Yes, you can select from a variety of professional backgrounds, settings, and attire options when customizing your headshots.
-                  </p>
-                </div>
-              </TabsContent>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>What is your refund policy?</AccordionTrigger>
+                <AccordionContent>
+                  We offer a 100% no-questions-asked money-back guarantee. If you're not completely satisfied with your headshots, we'll refund your full payment.
+                </AccordionContent>
+              </AccordionItem>
               
-              <TabsContent value="billing" className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">What payment methods do you accept?</h4>
-                  <p className="text-gray-600">
-                    We accept all major credit cards, PayPal, and Apple Pay.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Is there a refund policy?</h4>
-                  <p className="text-gray-600">
-                    Yes, we offer a 100% satisfaction guarantee. If you're not happy with your headshots, contact us for a full refund with no questions asked.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Are there any hidden fees?</h4>
-                  <p className="text-gray-600">
-                    No, the price you see is the price you pay. There are no hidden fees or subscription charges.
-                  </p>
-                </div>
-              </TabsContent>
-            </Tabs>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>How long does it take to get my headshots?</AccordionTrigger>
+                <AccordionContent>
+                  Most headshots are generated within a few hours. During peak times, it may take up to 24 hours.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5">
+                <AccordionTrigger>What do you do with my data?</AccordionTrigger>
+                <AccordionContent>
+                  We prioritize your privacy. Your photos are processed securely and never shared with third parties. They are deleted after processing.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
       
-      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-studio-purple to-studio-blue">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Transform Your Professional Image?</h2>
@@ -659,7 +579,6 @@ export default function Landing() {
         </div>
       </section>
       
-      {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
