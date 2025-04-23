@@ -5,15 +5,15 @@ export default function LandingBenefitsSection() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
+        <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-12 text-[#181C26]">
+          Studio-quality, faster,{" "}
+          <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
+            cheaper
+          </span>
+        </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Value Props */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-[#181C26]">
-              Studio-quality, faster,{" "}
-              <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
-                cheaper
-              </span>
-            </h2>
             <ul className="space-y-7">
               <li className="flex items-start gap-4">
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-green-100">
@@ -55,19 +55,17 @@ export default function LandingBenefitsSection() {
           </div>
           {/* Right: Price card */}
           <div className="flex items-center justify-center">
-            <div className="w-full max-w-md rounded-2xl shadow-md border bg-white p-12">
-              <div className="text-center">
-                <div className="text-5xl font-extrabold text-[#181C26] mb-2">$29</div>
-                <div className="text-xl font-semibold text-[#3C4251] mb-5">One-time payment</div>
-                <div className="flex items-center justify-center gap-2 mt-2">
-                  <svg width="22" height="22" fill="none" className="text-green-600" viewBox="0 0 24 24">
-                    <path d="M12 21C12 21 18.5714 17.7143 18.5714 12.8571V7.85714L12 3L5.42859 7.85714V12.8571C5.42859 17.7143 12 21 12 21Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
-                    <path d="M9.42856 12.1429L11.1429 14.1429L14.5714 10.2857" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-green-600 font-semibold text-base">
-                    100% Money-back Guarantee
-                  </span>
-                </div>
+            <div className="w-full max-w-md rounded-2xl shadow-md border bg-white p-12 text-center">
+              <div className="text-5xl font-extrabold text-[#181C26] mb-2">$29</div>
+              <div className="text-xl font-semibold text-[#3C4251] mb-5">One-time payment</div>
+              <div className="flex items-center justify-center gap-2 mt-2">
+                <svg width="22" height="22" fill="none" className="text-green-600" viewBox="0 0 24 24">
+                  <path d="M12 21C12 21 18.5714 17.7143 18.5714 12.8571V7.85714L12 3L5.42859 7.85714V12.8571C5.42859 17.7143 12 21 12 21Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+                  <path d="M9.42856 12.1429L11.1429 14.1429L14.5714 10.2857" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-green-600 font-semibold text-base">
+                  100% Money-back Guarantee
+                </span>
               </div>
             </div>
           </div>
