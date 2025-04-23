@@ -8,11 +8,11 @@ export default function LandingHeader() {
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            <div className="h-10 w-10 rounded-md bg-gradient-to-br from-studio-purple to-studio-blue flex items-center justify-center text-white mr-2">
-              <span className="font-bold text-lg">S</span>
+            <div className="h-10 w-10 rounded-md bg-gradient-to-br from-[#6E41C0] to-[#3A7BD5] flex items-center justify-center text-white mr-2">
+              <span role="img" aria-label="camera">📷</span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
-              Selfie Style Studio
+              Portro
             </span>
           </div>
           <div className="hidden md:flex items-center gap-6">

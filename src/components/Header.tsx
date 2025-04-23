@@ -14,11 +14,11 @@ export function Header({ email, showBackButton = false }: HeaderProps) {
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link to="/" className="flex items-center">
-            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-studio-purple to-studio-blue flex items-center justify-center text-white mr-2">
-              <span className="font-bold">S</span>
+            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-[#6E41C0] to-[#3A7BD5] flex items-center justify-center text-white mr-2">
+              <span role="img" aria-label="camera">📷</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
-              Selfie Style Studio
+              Portro
             </span>
           </Link>
         
