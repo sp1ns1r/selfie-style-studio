@@ -9,7 +9,7 @@ export default function LandingHeader() {
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
             <div className="h-10 w-10 rounded-md bg-gradient-to-br from-[#6E41C0] to-[#3A7BD5] flex items-center justify-center text-white mr-2">
-              <span role="img" aria-label="camera">📷</span>
+              <span role="img" aria-label="camera" className="opacity-80">🕹️</span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
               Portro
@@ -35,3 +35,4 @@ export default function LandingHeader() {
     </header>
   );
 }
+

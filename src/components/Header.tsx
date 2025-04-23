@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { LogOut, ChevronLeft, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,13 +14,13 @@ export function Header({ email, showBackButton = false }: HeaderProps) {
         <div className="flex items-center gap-4">
           <Link to="/" className="flex items-center">
             <div className="h-8 w-8 rounded-md bg-gradient-to-br from-[#6E41C0] to-[#3A7BD5] flex items-center justify-center text-white mr-2">
-              <span role="img" aria-label="camera">📷</span>
+              <span role="img" aria-label="camera" className="opacity-80">🕹️</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
               Portro
             </span>
           </Link>
-        
+          
           {showBackButton && (
             <Link 
               to="/" 
