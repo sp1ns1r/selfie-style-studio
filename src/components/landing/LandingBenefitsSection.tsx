@@ -1,102 +1,75 @@
 
-import { DollarSign, Clock, Check, ImageIcon, BadgeCheck } from "lucide-react";
+import { DollarSign, Clock, Image as ImageIcon } from "lucide-react";
 
 export default function LandingBenefitsSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Value Props */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Studio-quality, faster, <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">cheaper</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-[#181C26]">
+              Studio-quality, faster,{" "}
+              <span className="bg-gradient-to-r from-studio-purple to-studio-blue bg-clip-text text-transparent">
+                cheaper
+              </span>
             </h2>
-            <ul className="space-y-6">
-              <li className="flex items-center gap-4">
+            <ul className="space-y-7">
+              <li className="flex items-start gap-4">
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-green-100">
-                  <DollarSign className="h-5 w-5 text-green-600" />
+                  <DollarSign className="h-5 w-5 text-green-500" />
                 </span>
                 <div>
-                  <span className="text-lg md:text-xl font-semibold">Only $29</span>
-                  <p className="text-gray-500 text-base leading-snug">Professional photoshoots can cost $300+</p>
+                  <span className="text-lg md:text-xl font-bold text-[#181C26]">90% cheaper</span>
+                  <p className="text-gray-500 text-base mt-1">Professional photoshoots can cost $300+</p>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex items-start gap-4">
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-blue-100">
-                  <Clock className="h-5 w-5 text-blue-600" />
+                  <Clock className="h-5 w-5 text-blue-500" />
                 </span>
                 <div>
-                  <span className="text-lg md:text-xl font-semibold">Ready in Less Than 2 Hours</span>
-                  <p className="text-gray-500 text-base leading-snug">Just minutes to upload, finished photos delivered in under 2 hours</p>
+                  <span className="text-lg md:text-xl font-bold text-[#181C26]">Ready in under 2 hours</span>
+                  <p className="text-gray-500 text-base mt-1">Just minutes to upload, finished photos delivered in under 2 hours</p>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex items-start gap-4">
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-purple-100">
                   <ImageIcon className="h-5 w-5 text-studio-purple" />
                 </span>
                 <div>
-                  <span className="text-lg md:text-xl font-semibold">40 Professional Photos</span>
-                  <p className="text-gray-500 text-base leading-snug">Choose up to 5 different professional styles</p>
+                  <span className="text-lg md:text-xl font-bold text-[#181C26]">40 professional photos</span>
+                  <p className="text-gray-500 text-base mt-1">Choose up to 5 different professional styles</p>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex items-start gap-4">
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-yellow-100">
-                  <DollarSign className="h-5 w-5 text-yellow-600" />
+                  <DollarSign className="h-5 w-5 text-yellow-500" />
                 </span>
                 <div>
-                  <span className="text-lg md:text-xl font-semibold">Business Expense</span>
-                  <p className="text-gray-500 text-base leading-snug">Invoice provided for business write-off</p>
+                  <span className="text-lg md:text-xl font-bold text-[#181C26]">Expense it</span>
+                  <p className="text-gray-500 text-base mt-1">Invoice provided for business write-off</p>
                 </div>
-              </li>
-              <li className="flex items-center gap-4 mt-2">
-                <span className="h-9 w-9 flex items-center justify-center rounded-full bg-green-50 border border-green-200">
-                  <BadgeCheck className="h-5 w-5 text-green-600" />
-                </span>
-                <span className="text-base font-semibold text-green-700">
-                  100% Money-back Guarantee
-                </span>
               </li>
             </ul>
           </div>
-          {/* Right: Steps + Price */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border">
-            <div className="text-center mb-6">
-              <span className="text-5xl font-bold text-gray-900">$29</span>
-              <span className="block text-lg text-gray-700 mt-1 font-semibold">One-time payment</span>
-              <div className="flex items-center justify-center mt-2">
-                <BadgeCheck className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-700 font-medium text-base">100% Money-back Guarantee</span>
+          {/* Right: Price card */}
+          <div className="flex items-center justify-center">
+            <div className="w-full max-w-md rounded-2xl shadow-md border bg-white p-12">
+              <div className="text-center">
+                <div className="text-5xl font-extrabold text-[#181C26] mb-2">$29</div>
+                <div className="text-xl font-semibold text-[#3C4251] mb-5">One-time payment</div>
+                <div className="flex items-center justify-center gap-2 mt-2">
+                  <svg width="22" height="22" fill="none" className="text-green-600" viewBox="0 0 24 24">
+                    <path d="M12 21C12 21 18.5714 17.7143 18.5714 12.8571V7.85714L12 3L5.42859 7.85714V12.8571C5.42859 17.7143 12 21 12 21Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+                    <path d="M9.42856 12.1429L11.1429 14.1429L14.5714 10.2857" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span className="text-green-600 font-semibold text-base">
+                    100% Money-back Guarantee
+                  </span>
+                </div>
               </div>
             </div>
-            <ol className="space-y-5">
-              <li className="flex items-start gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-lg font-bold">
-                  1
-                </div>
-                <div>
-                  <span className="font-semibold text-lg">Upload your selfies</span>
-                  <p className="text-sm text-gray-500">Takes just 3-5 minutes</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-lg font-bold">
-                  2
-                </div>
-                <div>
-                  <span className="font-semibold text-lg">Our AI processes your photos</span>
-                  <p className="text-sm text-gray-500">In less than 2 hours</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-lg font-bold">
-                  3
-                </div>
-                <div>
-                  <span className="font-semibold text-lg">Download your professional headshots</span>
-                  <p className="text-sm text-gray-500">40 high-resolution images</p>
-                </div>
-              </li>
-            </ol>
           </div>
         </div>
       </div>
