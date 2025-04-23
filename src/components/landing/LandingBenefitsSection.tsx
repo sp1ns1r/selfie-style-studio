@@ -1,4 +1,3 @@
-
 import { DollarSign, Clock, Image as ImageIcon } from "lucide-react";
 
 export default function LandingBenefitsSection() {
@@ -56,7 +55,10 @@ export default function LandingBenefitsSection() {
           {/* Right: Price card */}
           <div className="flex items-center justify-center">
             <div className="w-full max-w-md rounded-2xl shadow-md border bg-white p-12 text-center">
-              <div className="text-5xl font-extrabold text-[#181C26] mb-2">$29</div>
+              <div className="flex justify-center items-baseline mb-2">
+                <div className="text-5xl font-extrabold text-studio-purple mr-3">$29</div>
+                <div className="text-2xl text-gray-500 line-through">$39</div>
+              </div>
               <div className="text-xl font-semibold text-[#3C4251] mb-5">One-time payment</div>
               <div className="flex items-center justify-center gap-2 mt-2">
                 <svg width="22" height="22" fill="none" className="text-green-600" viewBox="0 0 24 24">

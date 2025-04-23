@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -19,8 +20,8 @@ export default function LandingPricing() {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2">Professional Package</h3>
                 <div className="flex items-center justify-center">
-                  <span className="text-5xl font-bold">$29</span>
-                  <span className="text-gray-500 ml-2">/ one-time</span>
+                  <span className="text-5xl font-bold text-studio-purple">$29</span>
+                  <span className="text-gray-500 ml-2 line-through text-xl">$39</span>
                 </div>
                 <p className="text-gray-500 mt-2">No subscription, no hidden fees</p>
               </div>
