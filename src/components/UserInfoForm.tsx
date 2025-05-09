@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { User, Users } from "lucide-react";
 
 interface UserInfoFormProps {
@@ -17,6 +18,16 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
     onSubmit({ name, gender });
   };
   
+  const handleGenderChange = (value: string) => {
+    setGender(value);
+    onSubmit({ name, gender: value });
+  };
+  
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    onSubmit({ name: e.target.value, gender });
+  };
+  
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="relative">
@@ -30,31 +41,32 @@ export function UserInfoForm({ onSubmit }: UserInfoFormProps) {
           type="text"
           id="name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleNameChange}
           className="pl-10 bg-white border-gray-200 focus:border-studio-purple focus:ring-studio-purple/20"
           placeholder="Your name"
         />
       </div>
       
-      <div className="relative">
-        <div className="absolute left-3 top-[38px] text-purple-400">
-          <Users className="h-5 w-5" />
-        </div>
-        <Label htmlFor="gender" className="text-sm font-medium text-gray-700 mb-1 block">
+      <div className="space-y-1.5">
+        <Label htmlFor="gender" className="text-sm font-medium text-gray-700">
           Gender
         </Label>
-        <select
-          id="gender"
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-          className="w-full pl-10 py-2 rounded-md border border-gray-200 bg-white focus:border-studio-purple focus:ring-2 focus:ring-studio-purple/20 focus:outline-none"
-        >
-          <option value="">Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="non-binary">Non-binary</option>
-          <option value="other">Prefer not to say</option>
-        </select>
+        <div className="relative">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 z-10">
+            <Users className="h-5 w-5" />
+          </div>
+          <Select value={gender} onValueChange={handleGenderChange}>
+            <SelectTrigger id="gender" className="pl-10 bg-white border-gray-200 focus:border-studio-purple focus:ring-studio-purple/20">
+              <SelectValue placeholder="Select gender" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="male">Male</SelectItem>
+              <SelectItem value="female">Female</SelectItem>
+              <SelectItem value="non-binary">Non-binary</SelectItem>
+              <SelectItem value="other">Prefer not to say</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
     </form>
   );

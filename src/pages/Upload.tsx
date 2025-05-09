@@ -38,12 +38,19 @@ const Upload = () => {
     }, 500);
   };
   
+  const isSubmitDisabled = files.length < 10 || !userData.name || !userData.gender || uploading;
+  
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
       <Header showBackButton email="spencerkier@gmail.com" />
       
       <div className="container max-w-5xl py-6">
         <ProgressSteps steps={steps} />
+        
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-gray-800 text-center">Upload Your Photos</h1>
+          <p className="text-center text-gray-600 mt-2">We'll use these to generate your professional headshots</p>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
@@ -78,7 +85,7 @@ const Upload = () => {
                 <Button 
                   className="w-full bg-gradient-to-r from-studio-purple to-studio-blue hover:opacity-90 py-6 text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                   onClick={handleSubmit}
-                  disabled={uploading}
+                  disabled={isSubmitDisabled}
                 >
                   {uploading ? (
                     <>
@@ -92,6 +99,18 @@ const Upload = () => {
                     </>
                   )}
                 </Button>
+                
+                {files.length < 10 && (
+                  <p className="text-center text-amber-600 text-sm mt-3">
+                    Please upload at least 10 photos to continue
+                  </p>
+                )}
+                
+                {files.length >= 10 && (!userData.name || !userData.gender) && (
+                  <p className="text-center text-amber-600 text-sm mt-3">
+                    Please complete your information to continue
+                  </p>
+                )}
               </div>
             </CardContent>
           </Card>
