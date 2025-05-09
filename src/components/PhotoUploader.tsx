@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Upload, Info, X, Image as ImageIcon, Check } from "lucide-react";
+import { Upload, X, Image as ImageIcon } from "lucide-react";
 
 interface PhotoUploaderProps {
   onPhotosSelected: (files: File[]) => void;
@@ -54,74 +54,6 @@ export function PhotoUploader({ onPhotosSelected }: PhotoUploaderProps) {
   
   return (
     <div className="space-y-6">
-      <div className="bg-blue-50/80 border border-blue-100 rounded-xl p-5">
-        <h3 className="text-lg font-semibold mb-3 flex items-center text-studio-purple">
-          <span className="p-1.5 bg-studio-purple/10 rounded-full mr-2">
-            <ImageIcon className="h-4 w-4 text-studio-purple" />
-          </span>
-          How to Get the Best Results
-        </h3>
-        
-        <ol className="space-y-2 text-gray-700 mb-4">
-          <li className="flex gap-2">
-            <span className="font-medium text-gray-600">1.</span> 
-            <span className="font-medium text-gray-600">Get ready:</span> Style your hair and face how you want them to appear.
-          </li>
-          <li className="flex gap-2">
-            <span className="font-medium text-gray-600">2.</span>
-            <span className="font-medium text-gray-600">Take clear photos:</span> Use good lighting and neutral expressions.
-          </li>
-          <li className="flex gap-2">
-            <span className="font-medium text-gray-600">3.</span>
-            <span className="font-medium text-gray-600">Upload 10-15 selfies:</span> Include slightly different angles for best results.
-          </li>
-        </ol>
-        
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="bg-green-50 border border-green-100 rounded-lg p-3 flex-1">
-            <div className="flex items-center mb-2 text-green-700">
-              <Check className="h-4 w-4 mr-1.5" />
-              <span className="font-semibold">Do</span>
-            </div>
-            <ul className="space-y-1 text-sm text-green-800">
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Look directly at the camera</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Use good, consistent lighting</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Include slightly different angles</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="bg-red-50 border border-red-100 rounded-lg p-3 flex-1">
-            <div className="flex items-center mb-2 text-red-700">
-              <X className="h-4 w-4 mr-1.5" />
-              <span className="font-semibold">Don't</span>
-            </div>
-            <ul className="space-y-1 text-sm text-red-800">
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Wear sunglasses or hats</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Use silly faces or exaggerated expressions</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span> 
-                <span>Upload group photos or busy backgrounds</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
       <div 
         className={`border-2 border-dashed rounded-xl transition-all duration-300 flex flex-col items-center justify-center cursor-pointer
           ${dragActive 
